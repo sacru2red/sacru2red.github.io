@@ -1,0 +1,26 @@
+---
+layout: post
+title: Start git Pages
+---
+
+깃을 잘 모릅니다만, 이 글을 읽는 여러분이 깃페이지를 쉽게 시작하면 좋겠다는 생각으로 글을 작성해봅니다.
+
+Github Pages는 Github에서 제공하는 무료 웹사이트 서비스입니다. 
+
+개인 웹사이트를 만드는 방법들은 다양하죠. 그런데 저는 왜 깃페이지로 블로깅을 하려고 할까요? 첫째로, 많은 개발자들이 깃허브를 사용하고 SW업계가 관심 갖고 지켜보는 서비스라는 점이 있습니다. 그것에 버금가는 장점이 있습니다. 두번째로 우리가 신경을 것이 적다는 것입니다. 가장 많이 사용하는 티스토리, 네이버, 워드프레스 등의 플랫폼에서는 우리가 글꼴부터 줄 간격, 블로그 테마, 이미지 등등 신경 써야 할 것이 너무나 많죠. 깃페이지는 md파일을 작성하여 gitHub에 올리면 끝나기 때문에 우리가 신경써야하는 것이 매우 적습니다!
+
+깃허브 아이디는 만드셨나요? 지킬(Jekyll)을 repository에 올려봅시다.
+*지킬은 루비 기반으로 만들어진 정적 사이트를 생성해주는 도구로서 사용자들은 markerdown기반의 파일을 업로드하여 블로그를 운영 할 수 있도록 해줍니다. 
+<a>https://github.com/barryclark/jekyll-now</a>에 접근하여 fork버튼을 누릅시다.
+유저이름 / jekyll-now라고 하는 repo가 생성되었을 것입니다. Repository이름을 유저이름.github.io 로 바꿔야 합니다. Github이 해당 repo가 블로그 사이트로 사용되는걸 인증하는 방법입니다. 이렇게 하면 Context path없이 저 이름 규칙대로 url을 사용 할 수 있습니다. 다른 repo이름을 사용하면 project url이라고 http://{계정이름}.github.io/{repsitory이름} 으로 사용할 수 있지만 github에 내장된 page서비스인 jekyll 기능을 사용에 제약이있습니다.
+
+이제 설치됐습니다. 유저이름.github.io에 접근하면 정상적으로 블로그가 보일 것입니다. 처음되는 로딩시간은 30분까지도 걸린다고 합니다. 여전히 보이지 않는다면 이메일을 확인 해봅시다. 깃페이지의 jekyll이 배포에 실패하였거나 warning사항이 있을때 메일로 메시지를 보내줍니다.
+
+설정파일을 만져 볼까요? 다시 repo로 들어가서 "_config.yml" 파일을 클릭한 후 Edit(edit this file) 버튼을 클릭합니다. 테스트를 위해서 name과 url을 기입합니다. url은 “http://자신의 아이디.github.io”와 같이 작성합니다.
+하단에 Commit directly to the master branch가 선택되었는지 확인합니다. 다른 브랜치를 사용한 일은 없을 거에요. 저 혼자 작성할 페이지이니. Commit changes를 누릅시다.
+
+It's star한글은?
+
+![_config.yml]({{ site.baseurl }}/images/config.png)
+
+The easiest way to make your first post is to edit this one. Go into /_posts/ and update the Hello World markdown file. For more instructions head over to the [Jekyll Now repository](https://github.com/barryclark/jekyll-now) on GitHub.

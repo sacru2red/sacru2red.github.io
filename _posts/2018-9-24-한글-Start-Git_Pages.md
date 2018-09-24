@@ -3,7 +3,7 @@ layout: post
 title: Start git Pages
 ---
 
-It's start!
+It's star한글은?
 
 ![_config.yml]({{ site.baseurl }}/images/config.png)
 

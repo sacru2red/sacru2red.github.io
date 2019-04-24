@@ -87,3 +87,5 @@ exclude:
 
 plugins:
  - jekill-sitemap
+ 
+ disqus_shortname: myblog(sacru2red)

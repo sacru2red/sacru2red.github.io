@@ -30,15 +30,16 @@ layout: default
         {{ content }}
       </div>
     </div>
-    {% if page.comments %}
-        <-- add your code here -->
-    {% endif %}
+    
   </div>
   <div class="date">
     Written on {{ page.date | date: "%B %e, %Y" }}
   </div>
 
   {% include disqus.html %}
+  {% if page.comments %}
+        //<-- add your code here -->
+    {% endif %}
 </article>
 
 <div id="disqus_thread"></div>

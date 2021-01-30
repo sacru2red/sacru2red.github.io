@@ -85,9 +85,6 @@ exclude:
   - LICENSE
   - README.md
   - CNAME
-
-plugins:
-  - jekill-sitemap
  
 comments:
   provider: disqus

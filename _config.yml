@@ -85,3 +85,8 @@ exclude:
   - LICENSE
   - README.md
   - CNAME
+  
+comments:
+  provider: disqus
+
+disqus_shortname: sacru2red

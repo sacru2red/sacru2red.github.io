@@ -18,7 +18,7 @@ Expected linebreaks to be 'CRLF' but found 'LF'. eslint(linebreak-style)
 on Save에서 eslint fix가 동작하도록 설정한다.
 
 코드 파일을 저장하니 아래와 같은 상태다.
-[1]
+![somethingWrong1](\images\2021-01-31\2021-01-31_1.PNG)
 
 혹시나 해서 다시 저장을 실행해봤다.
 [2]

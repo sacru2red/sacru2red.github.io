@@ -87,7 +87,7 @@ exclude:
   - CNAME
 
 plugins:
- - jekill-sitemap
+  - jekill-sitemap
  
  comments:
   provider: disqus

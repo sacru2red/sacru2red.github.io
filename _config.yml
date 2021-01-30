@@ -90,3 +90,6 @@ comments:
   provider: disqus
 
 disqus_shortname: sacru2red
+
+plugins:
+ - jekill-sitemap

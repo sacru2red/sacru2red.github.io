@@ -92,4 +92,4 @@ plugins:
  comments:
   provider: disqus
   
- disqus_shortname: myblog(sacru2red)
+ disqus_shortname: sacru2red

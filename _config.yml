@@ -94,3 +94,5 @@ plugins:
   
  disqus_shortname: myblog(sacru2red)
  
+ disqus:
+  shortname: https-sacru2red-github-io

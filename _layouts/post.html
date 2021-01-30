@@ -36,10 +36,9 @@ layout: default
     Written on {{ page.date | date: "%B %e, %Y" }}
   </div>
 
-  {% include disqus.html %}
-  {% if page.comments %}
-        //<-- add your code here -->
-    {% endif %}
+  <div id="post-disqus" class="consainer">
+    {% include ../_includes/disqus.html %}
+  </div>
 </article>
 
 <div id="disqus_thread"></div>

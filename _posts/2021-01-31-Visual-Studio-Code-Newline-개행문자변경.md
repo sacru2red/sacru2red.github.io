@@ -19,30 +19,37 @@ on Save에서 eslint fix가 동작하도록 설정한다.
 
 코드 파일을 저장하니 아래와 같은 상태다.
 
-![somethingWrong1](/images/2021-01-31/2021-01-31_1.PNG)
+![somethingWrong1](/_posts/images/2021-01-31/2021-01-31_1.PNG)
 
 
 혹시나 해서 다시 저장을 실행해봤다.
-![somethingWrong2](/images/2021-01-31/2021-01-31_2.PNG)
+
+![somethingWrong2](/_posts/images/2021-01-31/2021-01-31_2.PNG)
+
 더 심해졌다.
 
 한편, eslint의 출력은 아래와 같다.
-![somethingWrong3](/images/2021-01-31/2021-01-31_3.PNG)
+
+![somethingWrong3](/_posts/images/2021-01-31/2021-01-31_3.PNG)
 
 구글링하니, 해당 옵션을 끄라고 하는 답변도 있다.
 하지만, 다른 환경에서 이미 사용중인 옵션을 유지하고 싶었기 때문에
 설정을 바꿔본다.
 
 해당옵션
-![vscSetting1](/images/2021-01-31/2021-01-31_4.PNG)
+
+![vscSetting1](/_posts/images/2021-01-31/2021-01-31_4.PNG)
 
 auto에서 \r\n (crlf)로 전역-작업영역에서 변경해보고 다시 vsc 로드하거나 재부팅해도 소용없었다.
 
 한참을 고통받다가 해결했다.
 vsc에서 아래 상태바에서 개행문자를 변경하는 것으로 해결했다.
-![correctvscSetting](/images/2021-01-31/2021-01-31_5.PNG)
+
+![correctvscSetting](/_posts/images/2021-01-31/2021-01-31_5.PNG)
 
 편---안
-![success1](/images/2021-01-31/2021-01-31_6.PNG)
-![success2](/images/2021-01-31/2021-01-31_7.PNG)
+
+![success1](/_posts/images/2021-01-31/2021-01-31_6.PNG)
+
+![success2](/_posts/images/2021-01-31/2021-01-31_7.PNG)
 

@@ -35,6 +35,6 @@ layout: default
     Written on {{ page.date | date: "%B %e, %Y" }}
   </div>
 </article>
-<div id="disqus_thread"></div>
-<script>
-                            
+<div id="post-disqus" class="container">
+  {% include disqus.html %}
+</div>                          

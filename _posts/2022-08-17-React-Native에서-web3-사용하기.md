@@ -56,10 +56,11 @@ module.exports = function override(config) {
 # 방법
 
 1. [rn-nodeify](https://github.com/tradle/rn-nodeify) 이용하기
-   조금은 과격한 방법이라고 할 수 있다.
-   명령어도 `rn-nodeify --hack`이다.
-   core node modules용 shims을 주입한다고 얘기할 수 있다.
-   명령어를 사용한다면 (`ex) rn-nodeify --install "fs,dgram,process,path,console"`) 당신이 작업하고 있는 프로젝트에 설치된 라이브러리(node_module) 내 package.json의 내용을 변경한다. 정확히는 아래와 같은 구문을 추가한다.
+
+조금은 과격한 방법이라고 할 수 있다.
+명령어도 `rn-nodeify --hack`이다.
+core node modules용 shims을 주입한다고 얘기할 수 있다.
+명령어를 사용한다면 (`ex) rn-nodeify --install "fs,dgram,process,path,console"`) 당신이 작업하고 있는 프로젝트에 설치된 라이브러리(node_module) 내 package.json의 내용을 변경한다. 정확히는 아래와 같은 구문을 추가한다.
 
 ```
 ...
@@ -114,8 +115,9 @@ readable-stream@2를 사용하고 있었다.
 (이건 사실 다른 꼼수로 해결 할 수 있다. root 프로젝트에서 readable-stream@3를 설치하고 resolve를 root 프로젝트에서 babel이나 metro에서 readable-stream@3로 처리하면 된다.)
 
 3. 내가 선택한 방법
-   node-libs-react-native를 포크해서 해결했다.
-   내가 겪었던 문제
+
+node-libs-react-native를 포크해서 해결했다.
+내가 겪었던 문제
 
 - crypto의 순환 종속성
 - 암호화 모듈 pbkdf2의 연산 시간 문제

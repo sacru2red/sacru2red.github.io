@@ -8,11 +8,13 @@ layout: default
   <div class="wrapper">
     <h1>{{ page.title }}</h1>
     <div class="single-post-summary">
-     <code> {{ page.summary }} </code>
+      <code>
+        {{ page.summary }}
+      </code>
     </div>
     <div class="post-content single-post-content" itemprop="articleBody">
       <div class="entry">
-        <code>{{ content }}</code>
+        {{ content }}
       </div>
     </div>
   </div>
@@ -22,4 +24,4 @@ layout: default
 </article>
 <div id="post-disqus" class="container">
   {% include disqus.html %}
-</div>                          
+</div>

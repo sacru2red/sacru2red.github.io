@@ -50,7 +50,7 @@ module.exports = function override(config) {
 }
 ```
 
-일부 라이브러리를 resolve할 때 Nodejs에 대응하는 라이브러리로 resolve해서 구동되도록 설정하라는 것이다.
+노드 코어 모듈을 resolve할 때 노드 코어 모듈에 대응하는 browserify 라이브러리로 resolve해서 구동되도록 설정하라는 것이다.
 그렇다면 React-Native에서는 어떻게 해야 할까
 
 # 방법

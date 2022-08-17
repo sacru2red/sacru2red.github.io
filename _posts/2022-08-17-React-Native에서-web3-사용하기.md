@@ -55,7 +55,7 @@ module.exports = function override(config) {
 
 # 방법
 
-1. [rn-nodeify](https://github.com/tradle/rn-nodeify) 이용하기
+1.[rn-nodeify](https://github.com/tradle/rn-nodeify) 이용하기
 
 조금은 과격한 방법이라고 할 수 있다.
 명령어도 `rn-nodeify --hack`이다.
@@ -85,7 +85,7 @@ React-Native의 슬로건 "write once run anywhere"를 이룰 수 있게 됐다.
 즉, 이 방법을 쓰는 경우에는 모든 resolve가 Android, IOS를 위한 설정으로 덮이게 되고, 내가 찾은 바로는 각각의 런타임 별로 디테일하게 설정해 줄 수 없었다.
 (rn-nodeify는 React-Native 초창기에 개발된 라이브러리이다.)
 
-2. [node-libs-react-native](https://github.com/parshap/node-libs-react-native) 이용하기
+2.[node-libs-react-native](https://github.com/parshap/node-libs-react-native) 이용하기
 
 [node-libs-browser](https://github.com/webpack/node-libs-browser)라는 라이브러리가 있다. 노드 코어 모듈에 매칭되는 browserfy 모듈들을 설정해 놓은 파일을 제공한다.
 위에서 web3의 가이드라인에서 말한 방법과 유사하다고 보면 된다.
@@ -114,7 +114,7 @@ React-Native의 JSC, Hermes에서 pbkdf2를 호출하여 암호화를 하면 실
 readable-stream@2를 사용하고 있었다.
 (이건 사실 다른 꼼수로 해결 할 수 있다. root 프로젝트에서 readable-stream@3를 설치하고 resolve를 root 프로젝트에서 babel이나 metro에서 readable-stream@3로 처리하면 된다.)
 
-3. 내가 선택한 방법
+3.내가 선택한 방법
 
 node-libs-react-native를 포크해서 해결했다.
 내가 겪었던 문제

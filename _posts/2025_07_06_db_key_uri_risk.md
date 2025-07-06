@@ -97,3 +97,8 @@ title: DB Key를 URI나 파라미터로 노출하는 것은 위험할까?
 ## 맺으며
 
 “DB Key를 URI에 노출해도 될까?” 라는 질문의 핵심은 **식별자의 예측 가능성** 이다. 만약 여러분이 아직 _aid_ 를 URI·파라미터·토큰에 노출하고 있다면, 다음 스프린트에서 **전역 고유 식별자** 로의 전환을 검토해 보자. 복잡한 추가 암호화(E2EE)를 적용하기 전에 말이다.
+
+### 다른 사람들의 의견
+
+[GetMapping시 URI에 PK 식별자가 노출되는 문제: 대체키를 사용한 해결](https://upcurvewave.tistory.com/441)
+[[키설계] UUID와 increment PK는 언제 사용해야할까?](https://americanopeople.tistory.com/378)

@@ -6,14 +6,13 @@ tags: Security, REST, API Design, Identifier, aid
 ---
 
 > **TL;DR**\
-> Auto‑Increment ID(이하 _aid_)를 그대로 URI에 노출하면 **예측 가능성** 때문에 brute‑force·정보 유출·IDOR(Insecure Direct Object Reference) 등 여러 공격에 당할 수 있는 취약점이 발생한다. 대안은 (1) 식별자를 암·복호화(E2EE)로 감추거나, (2) 처음부터 예측 불가능한 전역 고유 식별자(UUID v7, ULID, KSUID, Snowflake 등)를 쓰는 것이다. 후자가 훨씬 단순하고 실용적이다.
+> Auto‑Increment ID를 그대로 URI에 노출하면 **예측 가능성** 때문에 brute‑force·IDOR 등 여러 공격에 당할 수 있는 취약점이 발생한다. 대안은 식별자를 암·복호화처리하거나, 처음부터 예측 불가능한 식별자를 쓰는 것이다. 후자가 훨씬 단순하고 실용적이다.
 
 ## 계기가 된 논쟁
 
-> “URL 에서 `id` 가 보이는 건 안티패턴이다.”\
-> — 어떤 개발자의 주장
+> “URL 에서 `id` 가 보이는 건 안티패턴이다.”
 
-당시 그 동료는 `/products/1` 같은 요청을 문제 삼으며, 문자 단위 1:1 매핑으로 `/products/iksd` → 내부적으로 `1234` 를 읽도록 구현해 두었다. 나는 REST 관련 문서를 찾아가며 “그게 말이 되나? 아니, 왜 그렇게 해요? 일반적인 REST API 경로 잖아요”라고 맞섰다.
+당시 그 동료는 `/products/1` 같은 요청을 문제 삼으며, 문자 단위 1:1 매핑으로 `/products/iksd` → 내부적으로 `1234` 로 처리하도록 구현해 두었다. 나는 REST 관련 문서를 찾아가며 “왜 그렇게 해요? 일반적인 REST API 경로 잖아요”라고 맞섰다.
 
 실제로 대표적인 REST 참고 문서에서도 `id`가 포함된 URI를 예시로 쓰고 있다.
 
@@ -21,7 +20,7 @@ tags: Security, REST, API Design, Identifier, aid
 - [www.abstractapi.com/guides/api-glossary/uri](https://www.abstractapi.com/guides/api-glossary/uri) → `GET /users/123`
 - [dzone.com/articles/7-rules-for-rest-api-uri-design-1](https://dzone.com/articles/7-rules-for-rest-api-uri-design-1) → `/students/3248234/courses/2005/fall`
 
-그런데 시간이 지나 생각해 보니, 그 동료가 걱정한 건 _aid_ 가 갖는 특유의 보안·운영 리스크였다.
+그런데 시간이 지나 생각해 보니, 그 동료가 걱정한 건 _auto increment id_(이하 _aid_) 가 갖는 특유의 보안·운영 리스크였다.
 
 ## Auto‑Increment ID가 노출될 때 발생하는 보안 취약점
 
@@ -53,7 +52,7 @@ tags: Security, REST, API Design, Identifier, aid
 
 ### A — 식별자 암·복호화(E2EE)
 
-금융권 등 일부 영역에서는 URI·Body 의 **모든 파라미터를 한 번 더 암호화** 하기도 한다. 구현 예시는 다음과 같다.
+금융권 등 일부 영역에서는 TLS에 더해서 HTTP 등 통신 페이로드를 **한 번 더 암호화** 하기도 한다. 구현 예시는 다음과 같다.
 
 ```text
 1. 클라이언트는 서버의 공개키(Public Key)를 보유
@@ -67,10 +66,11 @@ tags: Security, REST, API Design, Identifier, aid
 
 ### B — 예측 불가능한 전역 고유 식별자 사용
 
-- **UUID v7**, **ULID**, **KSUID**, **Snowflake**, **Sonyflake** …\
+- **UUID v7**, **ULID**, **KSUID**, **NanoId**, **Snowflake**, **Sonyflake** …\
   대체 식별자는 _시간 정보 + 무작위 비트_ 를 섞어 **정렬 성능** 과 **예측 불가능성** 을 동시에 확보한다.
 - 주요 DB 인덱스(B‑tree 등)에서 무작위성으로 인한 성능 저하를 줄이려면 **상위 비트에 타임스탬프를 배치** 하는 설계가 일반적이다.
 - 의존성도 낮다. 서버·클라이언트 어느 한쪽에서 생성해도 충돌 확률이 무시할 만하다.
+- 일반적으로 uuid의 생성 조차도 DB의 부하여지가 있고, 서버측에서 생성하는 경우에, SELECT 쿼리 날리는 비용조차 아껴서 트랜잭션 내에서 더 자유롭게 처리할 수 있어 서버에서 처리한다.
 
 > 개인적으로는 **B** 가 ‘보안·운영·개발 생산성’ 세 마리 토끼를 모두 잡는 현실적 해법이라 본다.
 
@@ -81,7 +81,7 @@ tags: Security, REST, API Design, Identifier, aid
 
 - **aid 그대로라면** → URI·JWT·로그 그 어디든 노출을 최소화해야 한다. 앞서 본 모든 리스크가 적용된다.
 - **UUID v7 등 opaque ID 라면** → 평문 노출만으로는 특별한 보안 위협이 없다.
-  -> 아직 이게 위험하다고 생각한다면 A의 방법으로 가서 종단간 암호화 말고는 방법이 없다.
+  -> 아직 이게 위험하다고 생각한다면 A의 방법으로 가서 종단간 암호화 말고는 방법이 없다. 어떤 정보도 기준에 따라 민감정보일 수 있고, TLS로 이미 암호화 통신을 하여 패킷을 감청해도 복호화할 수 없다고 보는 것인데, 평문 노출이 문제가 된다면 모든 평문을 없애야 하는 것이다.
 
 ## 맺으며
 

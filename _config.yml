@@ -97,7 +97,8 @@ comments:
 
 disqus_shortname: sacru2red
 
+remote_theme: pages-themes/time-machine@v0.2.0
+
 plugins:
   - jekill-sitemap
-
-theme: jekyll-theme-time-machine
+  - jekyll-remote-theme # add this line to the plugins list if you already have one

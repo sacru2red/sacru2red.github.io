@@ -513,7 +513,11 @@ footer .owner p a {
 }
 .container {
   width: var(--content-width);
+  padding: 0;
+}
+.container.main {
   margin: 0 auto;
+  padding: 0 10px;
 }
 #main {
   padding: 0;
@@ -574,10 +578,12 @@ nav {
   height: unset;
   margin: 0;
   float: none;
+  display: contents;
 
   img {
     width: 4rem;
     height: 4rem;
+    max-width: max-content;
   }
 }
 .wrapper-masthead {

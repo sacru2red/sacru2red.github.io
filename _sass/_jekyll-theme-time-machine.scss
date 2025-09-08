@@ -34,6 +34,7 @@ h1.title {
 
 :root {
   --content-width: 675px;
+  --content-padding: 1rem;
 }
 .wrapper {
   width: var(--content-width);
@@ -486,8 +487,8 @@ footer .owner p a {
   margin: 0 auto;
 }
 article {
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: var(--content-padding);
+  padding-right: var(--content-padding);
 }
 #main {
   padding: 0;
@@ -588,4 +589,8 @@ p.tagline {
 }
 pre {
   overflow: auto;
+}
+.post-disqus {
+  padding-left: var(--content-padding);
+  padding-right: var(--content-padding);
 }

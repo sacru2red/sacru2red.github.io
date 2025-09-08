@@ -1,51 +1,81 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
 
-    {% include meta.html %}
+<head>
+  <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
 
-    <!--[if lt IE 9]>
+  {% include meta.html %}
+
+  <!--[if lt IE 9]>
       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
-    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
+  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}"
+    href="{{ site.baseurl }}/feed.xml" />
+  <link href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT.css" rel="stylesheet">
+  <script src="{{ '/js/current-section.js' | relative_url }}"></script>
+  <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+</head>
 
-    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
-  </head>
+<body>
+  <div class="wrapper-masthead">
+    <div class="container">
+      <header class="masthead">
+        <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" /></a>
 
-  <body>
-    <div class="wrapper-masthead">
-      <div class="container">
-        <header class="masthead clearfix">
-          <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" /></a>
+        <div class="site-info">
+          <h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
+        </div>
 
-          <div class="site-info">
-            <h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
-            <p class="site-description">{{ site.description }}</p>
-          </div>
-
-          <nav>
-            <a href="{{ site.baseurl }}/">Blog</a>
-            <a href="{{ site.baseurl }}/about">About</a>
-          </nav>
-        </header>
-      </div>
+        <nav>
+          <a href="{{ site.baseurl }}/">Blog</a>
+          <a href="{{ site.baseurl }}/about">About</a>
+        </nav>
+      </header>
     </div>
+  </div>
 
-    <div id="main" role="main" class="container">
-      {{ content }}
+  <div id="main" role="main" class="container">
+    <div class="tagline-container">
+      <p class="tagline">{{ site.description | default: site.github.project_tagline }}</p>
     </div>
+    {{ content }}
+  </div>
 
-    <div class="wrapper-footer">
-      <div class="container">
-        <footer class="footer">
-          {% include svg-icons.html %}
-        </footer>
-      </div>
+  <div class="wrapper-footer">
+    <div class="container">
+      <footer class="footer">
+        {% include svg-icons.html %}
+        <div class="owner">
+          {% if site.github.is_project_page %}
+          <p><a href="{{ site.github.owner_url }}" class="avatar"><img src="{{ site.github.owner_gravatar_url }}"
+                width="48" height="48"></a> <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>
+            maintains <a href="{{ site.github.repository_url }}">{{ site.title | default: site.github.repository_name
+              }}</a></p>
+          {% endif %}
+
+          {% if site.github.is_user_page %}
+          <p><a href="{{ site.github.owner_url }}" class="avatar"><img src="{{ site.github.owner_gravatar_url }}"
+                width="48" height="48"></a>View <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>
+            on
+            <a href="https://www.github.com">GitHub</a>
+          </p>
+          {% endif %}
+
+        </div>
+        <div class="creds">
+          <small>This page generated using <a href="https://pages.github.com/">GitHub Pages</a><br>theme by <a
+              href="https://twitter.com/jonrohan/">Jon Rohan</a></small>
+        </div>
     </div>
+  </div>
 
-    {% include analytics.html %}
-  </body>
+  {% include analytics.html %}
+  <div class="current-section">
+    <a href="#top">Scroll to top</a>
+    <p class="name"></p>
+  </div>
+</body>
+
 </html>

@@ -557,3 +557,30 @@ footer.footer {
   left: 0;
   right: 0;
 }
+header.masthead {
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+nav {
+  margin: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.site-avatar {
+  width: unset;
+  height: unset;
+  margin: 0;
+  float: none;
+
+  img {
+    width: 4rem;
+    height: 4rem;
+  }
+}
+.wrapper-masthead {
+  margin: 0;
+  margin-bottom: 1rem;
+}

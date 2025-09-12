@@ -36,6 +36,16 @@ h1.title {
   --content-width: 675px;
   --content-padding: 1rem;
 }
+@media (max-width: 676px) {
+  :root {
+    --content-width: calc(100% - 2rem);
+  }
+}
+@media (max-width: 345px) {
+  :root {
+    --content-width: 100%;
+  }
+}
 .wrapper {
   width: var(--content-width);
   margin: 0 auto;

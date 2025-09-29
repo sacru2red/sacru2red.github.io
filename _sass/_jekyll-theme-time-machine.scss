@@ -56,7 +56,7 @@ h1.title {
     --content-width: calc(100vw - 2rem);
   }
 }
-@include mobile2-min-width {
+@include mobile-min-width {
   :root {
     font-size: 12px;
     --content-width: 100vw;
@@ -523,7 +523,7 @@ footer .owner {
     margin-right: -0.5rem;
   }
 
-  @include mobile2-min-width {
+  @include mobile-min-width {
     margin-left: 0;
     margin-right: 0;
   }
@@ -633,7 +633,7 @@ pre {
 .entry > p,
 .tagline-container,
 .wrapper-masthead {
-  @include mobile2-min-width {
+  @include mobile-min-width {
     line-break: anywhere;
   }
 }

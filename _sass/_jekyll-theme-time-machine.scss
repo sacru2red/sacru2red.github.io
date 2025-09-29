@@ -36,14 +36,14 @@ h1.title {
   --content-width: 675px;
   --content-padding: 1rem;
 }
-@media (max-width: 676px) {
+@include mobile {
   :root {
-    --content-width: calc(100% - 2rem);
+    --content-width: calc(100vw - 2rem);
   }
 }
-@media (max-width: 345px) {
+@include mobile-min-width {
   :root {
-    --content-width: 100%;
+    --content-width: 100vw;
   }
 }
 .wrapper {
@@ -280,7 +280,6 @@ footer .owner {
   background: #222;
   border: 5px solid #444;
   padding: 5px 15px;
-  margin: -67px -10px 35px;
   color: #d6d6d6;
 }
 
@@ -476,12 +475,6 @@ footer .owner p a {
 }
 
 // add by sacru2red
-// .wrapper {
-//   padding-top: 2rem;
-//   padding-bottom: 2rem;
-//   padding-left: 1rem;
-//   padding-right: 1rem;
-// }
 .wrapper {
   width: 100%;
 }
@@ -508,8 +501,8 @@ article {
 }
 footer .owner {
   margin: 0;
-  margin-left: -20px;
-  margin-right: -20px;
+  // margin-left: max(-1.5rem, -10px);
+  // margin-right: max(-1.5rem, calc((100vw - var(--content-width)) / 2));
 }
 footer.footer {
   display: flex;
@@ -545,6 +538,7 @@ header.masthead {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  flex-wrap: wrap;
 }
 nav {
   margin: 0;

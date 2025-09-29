@@ -598,3 +598,11 @@ pre {
   padding-left: var(--content-padding);
   padding-right: var(--content-padding);
 }
+.post > h1 {
+  line-break: anywhere;
+}
+.entry > blockquote > p {
+  @include mobile-min-width {
+    line-break: anywhere;
+  }
+}

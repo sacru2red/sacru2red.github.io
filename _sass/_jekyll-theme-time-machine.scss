@@ -612,7 +612,12 @@ pre {
 .post > h1 {
   line-break: anywhere;
 }
-.entry > blockquote > p {
+.entry > blockquote > p,
+.entry > h1,
+.entry > ul,
+.entry > p,
+.tagline-container,
+.wrapper-masthead {
   @include mobile-min-width {
     line-break: anywhere;
   }

@@ -38,7 +38,7 @@ h4 {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  @include mobile2 {
+  @include mobile {
     line-height: 1.4;
   }
 }
@@ -57,7 +57,7 @@ h1.title {
   --content-width: 675px;
   --content-padding: 1rem;
 }
-@include mobile2 {
+@include mobile {
   :root {
     font-size: 14px;
     --content-width: calc(100vw - 2rem);
@@ -525,7 +525,7 @@ footer .owner {
   margin-left: -1rem;
   margin-right: -1rem;
 
-  @include mobile2 {
+  @include mobile {
     margin-left: -0.5rem;
     margin-right: -0.5rem;
   }
@@ -644,7 +644,7 @@ pre {
     line-break: anywhere;
   }
 }
-@include mobile2 {
+@include mobile {
   .site-avatar {
     display: block;
     margin: 0 auto;

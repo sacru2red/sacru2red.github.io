@@ -574,6 +574,10 @@ header.masthead {
   align-items: center;
   gap: 0.5rem;
   flex-wrap: wrap;
+  @include mobile-min-width {
+    padding-left: 4px;
+    padding-right: 4px;
+  }
 }
 nav {
   margin: 0;

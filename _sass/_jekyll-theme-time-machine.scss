@@ -36,6 +36,12 @@ h4 {
   font-size: 1rem;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  @include mobile2 {
+    line-height: 1.4;
+  }
+}
+
 h1.title {
   margin: 30px 20px 10px;
   font-size: 60px;
@@ -635,5 +641,25 @@ pre {
 .wrapper-masthead {
   @include mobile-min-width {
     line-break: anywhere;
+  }
+}
+@include mobile2 {
+  .site-avatar {
+    display: block;
+    margin: 0 auto;
+  }
+  .site-info {
+    display: block;
+    margin: 0 auto;
+  }
+  .site-description {
+    margin: 3px 0;
+  }
+  nav {
+    display: block;
+    font-size: 1rem;
+  }
+  a {
+    color: $blue;
   }
 }

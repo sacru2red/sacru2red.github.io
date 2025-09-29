@@ -302,6 +302,10 @@ footer .owner {
   border: 5px solid #444;
   padding: 5px 15px;
   color: #d6d6d6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 footer .creds small {
@@ -314,9 +318,9 @@ footer .creds small {
 footer .owner .avatar {
   background-color: #666;
   display: block;
-  margin: -19px 10px 0 0;
   width: 60px;
-  float: left;
+  position: absolute;
+  left: 2rem;
 }
 
 footer .owner img {

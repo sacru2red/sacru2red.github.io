@@ -709,4 +709,21 @@ pre {
   a {
     color: $blue;
   }
+  // 좁은 화면에서 칸 많은 표가 본문 폭을 넘지 않게 첫 칸 들여쓰기와 머리글 글자를 줄인다
+  .markdown-body td:first-child,
+  .markdown-body th:first-child {
+    padding-left: 8px;
+  }
+  .markdown-body th {
+    font-size: 1rem;
+  }
+  // 표는 본문 좌우 여백까지 쓰고, 그래도 영문 낱말 때문에 못 줄어드는 표는
+  // 낱말을 자르지 않고 표 안에서만 가로로 밀리게 한다
+  .markdown-body table {
+    display: block;
+    margin-left: calc(-1 * var(--content-padding));
+    margin-right: calc(-1 * var(--content-padding));
+    max-width: calc(100% + 2 * var(--content-padding));
+    overflow-x: auto;
+  }
 }

@@ -2,25 +2,24 @@
     document.addEventListener('DOMContentLoaded', function(){
     
       // putting lines by the pre blocks
-      var preElements = document.querySelectorAll("pre");
+      // 코드는 줄을 꺾지 않고 가로로 스크롤하므로 줄 번호는 실제 줄 수만큼만 매기고,
+      // 번호 칸과 코드를 한 줄짜리 flex 상자(.code-wrap)에 넣어 높이를 맞춘다
+      var preElements = document.querySelectorAll("div.highlight > pre");
       preElements.forEach(function(preElement) {
-        var pre = preElement.textContent.split("\n");
-        var lines = new Array(pre.length+1);
+        var pre = preElement.textContent.replace(/\n$/, "").split("\n");
+        var lines = [];
         for(var i = 0; i < pre.length; i++) {
-          var wrap = Math.floor(pre[i].split("").length / 70)
-          if (pre[i]==""&&i==pre.length-1) {
-            lines.splice(i, 1);
-          } else {
-            lines[i] = i+1;
-            for(var j = 0; j < wrap; j++) {
-              lines[i] += "\n";
-            }
-          }
+          lines.push(i+1);
         }
+        var wrapElement = document.createElement("div");
+        wrapElement.className = "code-wrap";
         var linesElement = document.createElement("pre");
         linesElement.className = "lines";
+        linesElement.setAttribute("aria-hidden", "true");
         linesElement.textContent = lines.join("\n");
-        preElement.parentNode.insertBefore(linesElement, preElement);
+        preElement.parentNode.insertBefore(wrapElement, preElement);
+        wrapElement.appendChild(linesElement);
+        wrapElement.appendChild(preElement);
       });
     
       var headings = [];

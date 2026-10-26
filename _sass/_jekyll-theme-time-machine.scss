@@ -536,7 +536,6 @@ article {
 }
 #main {
   padding: 0;
-  padding-top: 4rem;
   padding-bottom: 2rem;
   position: relative;
 }
@@ -579,10 +578,6 @@ footer.footer {
   border: 1px solid #2a2a2a;
   background: #ddd url(./images/pattern.png);
   box-shadow: 0 0 5px #b1b1b1;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
 }
 header.masthead {
   border: none;

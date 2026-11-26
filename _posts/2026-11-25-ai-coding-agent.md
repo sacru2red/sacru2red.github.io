@@ -75,7 +75,7 @@ Claude Code에도 `/plan`이 있습니다. Claude Desktop에는 이 슬래시 �
 
 아래 평가는 이번 주 기준입니다.
 
-Gemini 3.8 Flash는 한동안 프론티어(그 시점의 최상위)에 가깝게 버티다가, Claude Opus 5에 크게 뒤처졌습니다. 11월 18일에 나온 Gemini 4 Neon이 그 격차를 한 번에 역전했습니다. [Artificial Analysis Intelligence Index](https://artificialanalysis.ai/#intelligence-efficiency-tabs)에서 Neon(xhigh)은 62, GPT-6.2 Sol(max)은 57입니다. 입력 100만 토큰당 가격은 Neon이 $3, Sol이 $2이지만, 같은 일을 시키면 Neon이 효율적입니다. 더 똑똑하게 일합니다.
+Gemini 3.8 Flash는 한동안 프론티어(그 시점의 최상위)에 가깝게 버티다가, Claude Opus 5에 크게 뒤처졌습니다. 11월 18일에 나온 Gemini 4 Neon이 그 뒤를 다시 넘었습니다. Intelligence Index는 Neon(xhigh) 62, Opus 5.5(max) 59이고, Terminal-Bench 4.1은 65.2% 대 59.1%입니다. 코딩 에이전트로 돌리면 지수도 59 대 58로 Neon이 앞이고, 작업당 비용은 $6.86으로 Opus의 $12.61보다 낮습니다.
 
 ![Artificial Analysis의 작업당 비용. 2026년 11월 25일.](/images/posts/2026-11-25/artificial-analysis-cost.png)
 

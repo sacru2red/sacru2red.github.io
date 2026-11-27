@@ -67,9 +67,9 @@ Claude Code에도 `/plan`이 있습니다. Claude Desktop에는 이 슬래시 �
 
 ## 쓸 만한 모델은 자주 바뀝니다
 
-Gemini 3.8 Flash는 한동안 프론티어(그 시점의 최상위)에 가깝게 버티다가 Claude Opus 5에 크게 뒤처졌습니다. 11월 18일에 나온 Gemini 4 Neon이 Claude를 다시 앞섰습니다. Intelligence Index는 Neon(xhigh) 62, Opus 5.5(max) 59이고 Terminal-Bench 4.1은 65.2% 대 59.1%입니다. 코딩 에이전트로 돌리면 지수도 59 대 58로 Neon이 앞이고 작업당 비용은 $6.86으로 Opus의 $12.61보다 낮습니다.
+Gemini 3.8 Flash는 한동안 프론티어(그 시점의 최상위)에 가깝게 버티다가 Claude Opus 5에 크게 뒤처졌습니다. 11월 18일에 나온 Gemini 4 Neon이 Claude Opus 5.5를 다시 앞섰습니다. Intelligence Index는 Neon(xhigh) 62, Opus 5.5(max) 59이고 Terminal-Bench 4.1은 65.2% 대 59.1%입니다. 코딩 에이전트 성능을 재는 Coding Agent Index도 59 대 58로 Neon이 앞이고 작업당 비용은 $6.86으로 Opus의 $12.61보다 낮습니다.
 
-![Artificial Analysis Intelligence Index의 작업당 비용. 2026년 11월 25일.](/images/posts/2026-11-25/artificial-analysis-cost.png)
+![Artificial Analysis Coding Agent Index의 작업당 비용. 2026년 11월 26일.](/images/posts/2026-11-25/coding-agent-cost.png)
 
 쓸 만한 모델이 계속 바뀌므로, 실행 도구는 두고 모델만 바꾸는 편이 낫습니다. OpenRouter나 Cursor의 모델 라우터에서 모델을 고를 수 있습니다.
 
